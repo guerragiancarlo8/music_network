@@ -4,7 +4,6 @@
 <div style = "float:left; border: 2px solid black; width:45%;">
 	<h2> Concerts Happening Today </h2>
 
-
 	<ul>
 		<% @concerts_today.each do |concert| %>
 		<li>
@@ -29,4 +28,12 @@
 
 	<%end%>
 </div>
-<a style = "position:absolute; bottom:0;" href="/add"> Add New </a>
+<ul>
+	<li><a href="/add"> Add New </a></li>
+	<li><a href="/sort"> Find me a cheap concert! </a></li>
+	<li><a href="/popular"> What's hot now </a></li>
+</ul>
+
+
+
+

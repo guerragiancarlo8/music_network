@@ -1,5 +1,20 @@
 class ConcertsController < ApplicationController
-	
+	def popular
+		@concerts = Concert.joins(:comments).group(Comment.arel_table[:concert_id]).order(Comment.arel_table[:concert_id].count)
+
+	end
+
+	def sort
+		render 'sort'
+	end
+
+	def sorted
+
+		@concerts = Concert.where("price < ? AND date > ?",params["max-price-willing"], DateTime.now)
+
+
+	end
+
 	def add_comment
 
 		a = Comment.create(concert_id: params["id"],body: params["comment_body"])
@@ -9,7 +24,6 @@ class ConcertsController < ApplicationController
 	def index
 
 		@concerts_today = Concert.where("strftime('%d', date) = ? AND strftime('%m',date) = ?", DateTime.now.day.to_s, DateTime.now.month.to_s)
-
 		@concerts_next_month = Concert.where("strftime('%d',date) > ? AND strftime('%m',date) = ?", DateTime.now.day.to_s,DateTime.now.month.to_s)
 
 

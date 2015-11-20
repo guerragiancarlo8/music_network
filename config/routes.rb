@@ -5,9 +5,11 @@ Rails.application.routes.draw do
   get '/add' => 'concerts#new'
   post '/add' => 'concerts#create'
 
-  
+
   #vista intermedia donde se accesa el
   get '/sort' => 'concerts#sort'
+  post '/sorted' => 'concerts#sorted'
 
+  get '/popular' => 'concerts#popular'
  
 end

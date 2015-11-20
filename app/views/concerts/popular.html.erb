@@ -1,0 +1,10 @@
+<h2> Concerts sorted by number of comments </h2>
+
+<% @concerts.each do |concert| %>
+	<li>
+
+		<a href="/concerts/<%=concert.id%>"><%= concert.band %> </a>
+
+	</li>
+
+<%end%>

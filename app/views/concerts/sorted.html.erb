@@ -1,0 +1,7 @@
+<h2> Available Concerts </h2>
+
+<% @concerts.each do |x| %>
+	<ul>
+		<li><a href="/concerts/<%=x.id%>"><%= x.band %> </a></li>
+	</ul>
+<%end%>
