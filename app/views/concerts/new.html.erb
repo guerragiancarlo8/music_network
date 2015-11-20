@@ -1,0 +1,9 @@
+<%= form_for :concert do |f| %>
+	Band: <%= f.text_field :band %><br>
+	Venue: <%= f.text_field :venue %><br>
+	City: <%= f.text_field :city %><br>
+	Date: <%= f.date_field :date %><br>
+	Price: <%= f.text_field :price %><br>
+	Description: <%= f.text_area :description %>
+	<%= f.submit %>
+<%end%>

@@ -1,0 +1,13 @@
+<h1> Music Concert Network </h1>
+
+<ul>
+<% @concerts.each do |concert| %>
+	<li>
+
+		<a href="/concerts/<%=concert.id%>"> <%= concert.band %> </a>
+
+	</li>
+
+<%end%>
+
+<a href="/add"> Add New </a>
