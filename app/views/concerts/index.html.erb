@@ -9,7 +9,7 @@
 		<% @concerts_today.each do |concert| %>
 		<li>
 
-			<a href="/concerts/<%concert.id%>"><%= concert.band %> </a>
+			<a href="/concerts/<%=concert.id%>"><%= concert.band %> </a>
 
 		</li>
 
@@ -23,7 +23,7 @@
 		<% @concerts_next_month.each do |concert| %>
 		<li>
 
-			<a href="/concerts/<%concert.id%>"><%= concert.band %> </a>
+			<a href="/concerts/<%=concert.id%>"><%= concert.band %> </a>
 
 		</li>
 
