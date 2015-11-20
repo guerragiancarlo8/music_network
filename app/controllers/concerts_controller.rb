@@ -1,7 +1,10 @@
 class ConcertsController < ApplicationController
 	def index
 
-		@concerts = Concert.all
+		@concerts_today = Concert.where("strftime('%d', date) = ? AND strftime('%m',date) = ?", DateTime.now.day.to_s, DateTime.now.month.to_s)
+
+		@concerts_next_month = Concert.where("strftime('%d',date) > ? AND strftime('%m',date) = ?", DateTime.now.day.to_s,DateTime.now.month.to_s)
+
 
 	end
 
@@ -13,7 +16,7 @@ class ConcertsController < ApplicationController
 	end
 
 	def create 
-		Concert.create(desired_params)
+		a = Concert.create(desired_params)
 		redirect_to '/'
 	end
 

@@ -1,13 +1,32 @@
 <h1> Music Concert Network </h1>
 
-<ul>
-<% @concerts.each do |concert| %>
-	<li>
 
-		<a href="/concerts/<%=concert.id%>"> <%= concert.band %> </a>
+<div style = "float:left; border: 2px solid black; width:45%;">
+	<h2> Concerts Happening Today </h2>
 
-	</li>
 
-<%end%>
+	<ul>
+		<% @concerts_today.each do |concert| %>
+		<li>
 
-<a href="/add"> Add New </a>
+			<a href="/concerts/<%concert.id%>"><%= concert.band %> </a>
+
+		</li>
+
+	<%end%>
+</div>
+
+<div style = "float:right; border: 2px solid red; width:45%;">
+	<h2> Later This Month </h2>
+
+	<ul>
+		<% @concerts_next_month.each do |concert| %>
+		<li>
+
+			<a href="/concerts/<%concert.id%>"><%= concert.band %> </a>
+
+		</li>
+
+	<%end%>
+</div>
+<a style = "position:absolute; bottom:0;" href="/add"> Add New </a>
